@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "8fbff7db-cb66-47c2-a885-36a3649e4836",
+		"name": "Telecom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE-CUSTOMER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"sunny\",\n\t\"email\":\"sunny@mail.com\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7071/customer /save",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"customer ",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE-SIM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"imsi\":\"2001\",\n\t\"msisdn\":\"2002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7071/simcard/save",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"simcard",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Customer Sims",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7071/customer/4",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"customer",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link sim to Customer ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"simcardId\":[\"1\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7071/customer/update/5",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"customer",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
