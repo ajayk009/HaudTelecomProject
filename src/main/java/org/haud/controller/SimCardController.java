@@ -25,7 +25,7 @@ public class SimCardController {
 	@Autowired
 	private SimCardService simCardService;
 
-	@PostMapping(name="/save")
+	@PostMapping(value="/save")
 	public ResponseEntity<SimResponseDto> addSimCard(@RequestHeader(Headers.USER_NAME) String userName,@RequestBody SimRequestDto request) {
 
 		log.info("Creating sim card " + request);
